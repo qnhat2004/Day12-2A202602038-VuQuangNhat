@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      AGENT_API_KEY: ci-dummy-key-for-testing
+      AGENT_API_KEY: dummy
       REDIS_URL: "fake://"
     steps:
       - uses: actions/checkout@v4
