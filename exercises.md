@@ -6,7 +6,7 @@
 > Cách trả lời: thay dòng trả lời mặc định bằng câu trả lời.
 > `grade.py` đếm số câu đã trả lời (15 điểm cho 10 câu).
 >
-> Họ và tên: Vũ Quang Nhật  Mã học viên: (Điền mã học viên)
+> Họ và tên: Vũ Quang Nhật  Mã học viên: 2A202602038
 
 ---
 
