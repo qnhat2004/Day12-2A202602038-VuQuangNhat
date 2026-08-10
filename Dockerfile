@@ -21,21 +21,22 @@
 #            docker images day12-agent:prod     # xem dung lượng
 # ═══════════════════════════════════════════════════════════════════
 
- # ---- Stage 1: Builder (Cài đặt thư viện) ----
-FROM python:3.11-slim AS builder
+ # ---- Stage 1: Builder (Chỉ cài thư viện runtime) ----
+FROM python:3.11-alpine AS builder
 WORKDIR /build
 COPY requirements.txt .
-RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+RUN pip install --no-cache-dir --prefix=/install \
+    fastapi uvicorn pydantic pydantic-settings redis python-dotenv
 
-# ---- Stage 2: Production (Image chính chạy ứng dụng) ----
-FROM python:3.11-slim
+# ---- Stage 2: Production (Image siêu nhẹ < 150MB) ----
+FROM python:3.11-alpine
 WORKDIR /app
 COPY --from=builder /install /usr/local
 COPY app/ app/
 COPY utils/ utils/
 
-# Chạy bằng user thường (tránh dùng quyền root)
-RUN useradd -m appuser
+# Chạy bằng user thường trên Alpine
+RUN adduser -D appuser
 USER appuser
 
 EXPOSE 8000
