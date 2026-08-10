@@ -11,8 +11,8 @@
 | Mục | Nội dung |
 |-----|----------|
 | Họ và tên | Vũ Quang Nhật |
-| Mã học viên | (Điền mã học viên) |
-| Repo | DAY12-NguyenVanA |
+| Mã học viên | 2A202602038 |
+| Repo | DAY12-2A202602038-VuQuangNhat |
 
 ## Service
 
@@ -30,7 +30,7 @@ Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 |------|--------|---------|
 | `PORT` | ✅ | platform tự gán |
 | `AGENT_API_KEY` | ✅ | đặt trong dashboard, không nằm trong repo |
-| `REDIS_URL` | ✅ | Render Redis / Upstash Redis |
+| `REDIS_URL` | ✅ | Upstash Redis |
 | `RATE_LIMIT_PER_MINUTE` | ✅ | 10 |
 | `MONTHLY_BUDGET_USD` | ✅ | 10.0 |
 | `LOG_LEVEL` | ✅ | INFO |
